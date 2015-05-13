@@ -46,6 +46,7 @@ Gines
 		<preference name="LoadingDialog" value=",Cargando....."/> 
 		<preference name="LoadUrlTimeoutValue" value="20000" />
 		<preference name="disable-cursor" value="true" />
+		<preference name="EnableViewportScale" value="true" />
 		
 		<gap:platform name="ios" />
 		
