@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--IOS-->
+
+<title>miColegioApp</title>
+
+	
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<link rel="stylesheet" href="jqm/jquery.mobile-1.4.2.min.css" />
+
+<link rel="stylesheet" href="themes/tema.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+
+<script src="jqm/jquery-1.10.2.min.js"></script>
+<script src="jqm/jquery.mobile-1.4.2.min.js"></script>
+
+<link rel="shortcut icon" href="imagenes/300ico.png">
+<link rel="apple-touch-icon" sizes="72x72" href="72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="144.png" />
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="PushNotification.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script type="text/javascript"> 
+        //El registro al servicio de google lo hacemos automáticamente
+       app.initialize();
+	
+</script>
+
+<style type="text/css">
+.granate {
+	color: #542876;
+}
+#page13 #contepagina13 center label {
+	color: #93C;
+	font-size: 18px;
+	font-weight: bold;
+}
+</style>
+
+
+<script src="js/aviso.js"></script>
+<script src="js/borrarmensaje.js"></script>
+<script src="js/borrafavorito.js"></script>
+<script src="js/buscarAlumno.js"></script>
+<script src="js/mostrarDatos.js"></script>
+<script src="js/validarDni2.js"></script>
+<script src="js/registrarFamiliar.js"></script>
+<script src="js/registrarAlumno.js"></script>
+<script src="js/nuevoAlumno.js"></script>
+<script src="js/listamensajes.js"></script>
+<script src="js/listaweb.js"></script>
+<script src="js/listafavorito.js"></script>
+<script src="js/listacentros.js"></script>
+<script src="js/globo.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/init.js"></script>
+<script src="js/portada.js"></script>
+<script src="js/firma.js"></script>
+<script src="js/lasesion.js"></script>
+<script src="js/contadorvisitas.js"></script>
+<script src="js/sumavisita.js"></script>
+<script src="js/favorito.js"></script>
+<script src="js/web.js"></script>
+<script src="js/onLoad.js"></script>
+<script src="js/ponercurso.js"></script>
+<script src="js/listafpb.js"></script>
+<script src="js/listafpm.js"></script>
+<script src="js/listafps.js"></script>
+<script src="js/listagrupo.js"></script>
+<script src="js/passemail.js"></script>
+<script src="js/loginval2.js"></script>
+
+</head> 
+<body onLoad="init()"> 
+<!------------------------------------------------------------------------PAGINA 0---------------------------------------------------------------------->
+<div data-role="page" data-theme="a" id="pagina0">
+<div style="height:20px; visibility:hidden"> </div>
+  <div data-role="header">
+    <h1>miColegioApp</h1>
+  </div>
+	
+  <div data-role="main" class="ui-content" >
+  
+         <div class="ui-grid-solo" align="center" style="width:90%; margin-left:5%; margin-top:15%; margin-bottom:15%;">
+         <form name="form2" id="form2" method="POST">
+    			<label for="usuario" >Correo electrónico:</label>        
+        		<input name="usuario" type="email" id="usuario" autofocus>        
+     			<!---------->         
+        		<label for="pa2">Contraseña:</label>
+        		<input type="password" name="pa2" id="pa2"> 
+                <a data-role="button"  data-icon="check" data-transition="slide" onClick="loginVal2()" data-inline="true" style="width:65px;">Entrar</a>
+                <a data-role="button" data-icon="edit" href="#page2" style="width:65px;" data-inline="true">Registro</a>
+                              		
+           </form> 
+              <br><br><a href="" onClick="passEmail()">He olvidado mi contraseña</a>                
+		</div>
+                      
+	 </div>
+
+  <div data-role="footer" data-position="fixed">
+   
+   	<label style="font-size:15px;"><center>&copy; Todos los derechos reservados creaTáctil</center></label>
+   
+  </div>
+  
+</div> 
+<!----------------------------------------------------------------------- FIN PAGINA 0---------------------------------------------------------------->
+
+<!----------------------------PAGINA 1-------------------------------->
+<div data-role="page" id="page1" data-theme="a" >  
+	
+ <div style="height:20px; visibility:hidden"> </div>
+ <div data-role="panel" id="overlayPanel" data-display="overlay" data-theme="a"> 
+    <h3>Menú</h3>
+    <div style="width:98%" data-theme="a">
+<ul data-role="listview">
+    <li data-icon="bullets" ><a href="#" onClick="mostrarDatos()">Registro</a></li>
+    <li data-icon="mail" ><a onClick="crearLista()">Circulares</a></li>
+    <li data-icon="star"><a onClick="listafavorito()">Favorito</a></li>
+    <li data-icon="navigation"><a href="#" onClick="listaweb()">Web</a></li>
+    <li data-icon="info"><a href="#page5" data-transition="slide">Ayuda</a></li>
+    <li data-icon="delete"><a href="#pageone" data-rel="close" data->Cerrar menú</a></li>
+</ul>
+<br>
+<br>
+<center>
+
+</center>
+    </div>
+ </div>
+
+  
+    
+    <div data-role="header" data-theme="a">
+		<a href="#overlayPanel" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+        <h1 style="width:42%; ">miColegioApp</h1>
+        
+    </div >
+    
+    <div data-role="main" class="ui-content" style="margin:0; padding:0; position:fixed; width:100%">
+    <img id="portada" src="" height="0%" width="100%">
+    </div>
+    
+    <!--footer-->  
+    <div data-role="footer" data-theme="a" data-position="fixed" >
+    <div data-role="navbar" >
+    <ul>
+    <li><a href="#" data-role="button" onClick="mostrarDatos()" data-icon="bullets">Registro</a></li>
+    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img src="imagenes/0.png" class="globo" style="float:left; width:15px;" >Circulares</a></li>
+    <li><a href="#" data-role="button" onClick="listafavorito()" data-icon="star">Favoritos</a></li>
+    <li><a href="#" data-role="button" onClick="listaweb()" data-icon="navigation">Web</a></li>
+    </ul>
+	</div>
+   
+   <!--PUBLICIDAD  <center><a onClick="web()"><img src="http://mc.creatactil.com/imagenes/banner.png" height="30px" style="margin-top:0.3em"></a></center>--> 
+    
+    </div>
+    
+</div>
+
+
+<!----------------------------PAGINA 2-------------------------------->
+<div data-role="page" id="page2" data-theme="a">
+	 <div style="height:20px; visibility:hidden"> </div>
+    
+    <div data-role="header" data-theme="a" >
+    
+     	<a href="#page1" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo(), portada()" data-theme="a"></a>
+		<h1>DATOS FAMILIAR</h1>
+       
+	</div>
+	
+    
+    
+    <div data-role="content" id="contenido1"  >	
+		
+        
+        <form name="formulario1" id="formulario1">
+        
+         <label for="parentesco" data-inline="true">Parentesco:</label>
+        
+       	<select name="parentesco" id="parentesco" data-native-menu="false" style="margin-left:1em; margin-right:1em">
+               
+          <option value="MADRE" selected>Madre<option>
+          <option value="PADRE">Padre</option>
+          <option value="TUTOR">Tutor Legal</option>
+          <option value="PERSONA AUTORIZADA">Persona Autorizada</option>
+          <option value="MAESTRO">Maestro/Profesor</option>
+       </select>
+      
+        
+        <label for="nombre_familiar">Nombre y apellidos del familiar:</label>
+        <input name="nombre_familiar" type="text" id="nombre_familiar" value="" placeholder="Padre/Madre o Tutor etc.">
+        
+        <label for="telefono">Teléfono móvil:</label>
+        <input name="telefono" type="number" maxlength="9" id="telefono" placeholder="Telefono">
+        
+        <input name="dni" id="dni" type="hidden">  
+      
+       	  
+        <label for="correo">Correo electrónico:</label>
+        <input name="correo" type="text" id="correo" placeholder="Correo electrónico">
+       	  
+       <label for="correo">Contraseña:</label>
+       <input name="pa1" id="pa1" type="password" placeholder="Max. 20 caracteres">
+       
+      	 
+       
+          
+           <input name="regId" id="regId" type="hidden">    
+  		</form>  
+        
+       	 <div id="deviceready" class="blink" hidden="true">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+      </div>  
+	
+    
+     		<!-- Botones de registro ------>		
+ 		 <fieldset class="ui-grid-a">
+           <div class="ui-block-a">
+ <a href="#page7" data-role="button" data-transition="slide" data-icon="check" id="enviadatos" style="margin-left:1em; margin-right:5%">Guardar</a>
+ 			</div>
+    		 <div class="ui-block-b">
+    <a data-role="button" name="link" href="" data-icon="plus" onClick="validarDni2()" style="margin-right:1em; margin-left:5%">Modificar Datos Alumn@s</a>
+    		</div>
+            </fieldset>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>				
+    
+    <!-- Pie de pagina dos -->  
+	<div data-role="footer" data-position="fixed" data-theme="a">
+	        <div data-role="controlgroup" >
+           
+            
+            </div>
+    </div>
+	
+</div>
+
+<!----------------------------PAGINA 3-------------------------------->
+<div data-role="page" id="page3" data-theme="a">
+	 <div style="height:20px; visibility:hidden"> </div>
+    
+    <div data-role="header" data-theme="a">
+		<a href="#page2" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a">Atrás</a>
+    	<h1>DATOS ALUMN@</h1>
+       
+    </div>
+	
+    <div data-role="content">	
+		
+        
+        <form name="formulario2" id="formulario2" data-ajax="false">
+        
+        <label>Código del alumn@ (Cial):</label>
+         
+        <div class="ui-grid-solo" >
+        	<div class="ui-block-a"><input name="cial" type="text" id="cial" placeholder="Ver boletín de notas" ></div>
+          </div>  
+       
+     <fieldset class="ui-grid-a" data-type="horizontal">   
+               <div class="ui-block-a"><a  href="#page8" data-rel="dialog" data-role="button" data-icon="info" style="text-align:left"">¿Cial...?</a></div> 
+                          
+        <div class="ui-block-b"><a href="#" data-role="button"  data-icon="search" onClick="buscarAlumno()" style="text-align:left">Modificar datos</a></div>
+        
+  
+        
+        </fieldset>
+    
+       
+        <label for="nombre_alumno">Nombre:</label>
+        <input name="nombre_alumno" type="text" id="nombre_alumno" placeholder="Nombre del alumno">
+       
+       	<label for="apellidos">Apellidos:</label>
+        <input name="apellidos" type="text" id="apellidos" placeholder="Apellidos del alumno">
+        
+       <label for="codigo">Código del Centro:</label>
+       
+       <fieldset class="ui-grid-a" data-type="horizontal">
+        	<div class="ui-block-a">
+            <input name="codigo" type="number" maxlength="8" id="codigo" placeholder="Presione Buscar.." ></div>
+        	    		
+          <div class="ui-block-b">
+          <a href="#page9" data-role="button" data-icon="search">Buscar código</a></div>
+        </fieldset>
+   
+   
+   <!--BUSQUEDA DE CURSO -->     
+    <fieldset class="ui-grid-a">
+           <div class="ui-block-a">
+  			<input name="btncurso" id="btncurso" class="btncurso" type="button" value="Curso" data-icon="search" data-transition="slide" onClick="listafpb();listafps();listafpm()">
+          </div>
+           
+            <div class="ui-block-b">
+              
+           <input name="btngrupo" id="btngrupo" class="btngrupo" type="button" value="Grupo" data-icon="search" data-transition="slide" onClick="listagrupo()">
+            </div>
+              <div class="ui-block-a">
+         <input name="boxcurso"  type="hidden" id="boxcurso" disabled style="text-align:center">
+       
+         </div>
+           <div class="ui-block-b">
+         <input name="boxgrupo" type="hidden" id="boxgrupo" disabled style="text-align:center">
+    		</div>
+    
+    </fieldset>
+      
+     
+      
+     <!--SEGUNDO BLOQUE DE BOTONES -->     
+    
+    <fieldset class="ui-grid-a" data-type="horizontal">
+   	
+    <div class="ui-block-a">	
+    <label for="comedor" style="color:#000">Comedor:</label>
+    <select id="comedor" name="comedor" data-native-menu="false" >
+    	<option value="SI">Si</option>
+    	<option value="NO">No</option>
+    </select></div>
+  		
+      	<div class="ui-block-b">
+         <label for="transporte" style="color:#000">Transporte:</label>
+    <select id="transporte" name="transporte" data-native-menu="false">
+    	<option value="SI">Si</option>
+    	<option value="NO">No</option>
+    </select></div>
+    </fieldset>
+   
+    <!--TERCER BLOQUE DE BOTONES -->  
+   
+    <fieldset class="ui-grid-a" data-type="horizontal">
+    	
+        <div class="ui-block-a">
+        <label for="actividad" style="color:#000">Act. Extraescolar:</label>
+     <select id="actividad" name="actividad" data-native-menu="false" >
+    	<option value="SI">Si</option>
+    	<option value="NO">No</option>
+    </select>
+    	</div>
+    
+    	<div class="ui-block-b">
+         <label for="ampa" style="color:#000">Socio Ampa:</label>
+    <select id="ampa" name="ampa" data-native-menu="false">
+    	<option value="SI">Si</option>
+    	<option value="NO">No</option>
+    </select></div>
+    </fieldset>
+     
+     </form>
+    
+   <!-- Botones de registro -->
+     
+   </div>
+     <a href="#" onClick="registrarAlumno()" data-icon="check" data-iconpos="left" data-role="button" data-rel="dialog" style="margin-left:1.2em; margin-right:1.2em">Guardar</a>
+    
+      <a id='lnkDialog' href="#page12" data-rel="dialog" data-transition="pop" style='display:none;'></a> 
+ <!-- Pie de pagina 3 -->
+
+</div>
+</div>
+
+<!----------------------------PAGINA 4-------------------------------->
+<div data-role="page" id="page4" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"> </div>
+     
+    <div data-role="header" data-theme="a">   
+	  <a href="#page1" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo(), portada()" data-theme="a">Atrás</a>
+      <h1>CIRCULARES</h1>
+	<!--<a href="#page1" data-role="button" data-icon="home" onClick="inicio()">Inicio</a> -->
+    </div> 
+	
+	 <div data-role="content" id="contenido">
+			
+		   <!-- Aqui se añade el listado de mensajes -->
+		  <ul data-role="listview"  id="lista"  data-inset="true"  >
+		  </ul>
+          
+           <ul data-role="listview"  id="lista1"  data-inset="true" >
+		  </ul>
+	 		<center><div id="carga23"><img src="imagenes/cargando.gif" style="margin-top:10%"></div></center>
+       <br><br><br><br><br><br><br><br>
+</div> 
+        
+        
+        
+    <!--Pie de pagina ---->
+   <div data-role="footer" data-theme="a" data-position="fixed" id="piepagina">
+    
+    </div>
+   <!--Final Pie de pagina -->
+    
+   
+    
+ 
+</div>
+<!----------------------------PAGINA 5-------------------------------->
+<div data-role="page" id="page5" data-theme="a">
+	 <div style="height:20px; visibility:hidden"> </div>
+     
+	<div data-role="header" data-theme="a">
+    <a href="#page1" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo(), portada()" data-theme="a">Atrás</a>
+		<h1>PÁGINA DE AYUDA</h1>
+	</div>
+	
+    <div data-role="content">	
+			   
+            
+            <p><a href="#" data-role="button" data-icon="bullets" data-iconpos="notext" data-inline="true"></a><strong>Registro y modificación</strong><br>
+            	<ul>
+                 <li>Introduzca los datos del familiar (padre, madre o persona autorizada) en los campos correspondientes.</li>
+                 <li>Asegúrese de que éstos son correctos para que la aplicación funcione adecuadamente. A continuación presione el botón <strong>"Guardar"</strong>.<br></li>
+                 
+                  <li>Procederemos ahora a registrar al alumn@. Se despliega la siguiente pantalla:</li>
+                </ul>                
+          		
+                <p style="margin-left: 2em">
+                 - Código del alumn@): Se solicita en la Secretaría del Centro.<br>
+                 - Nombre del alumn@.<br>
+                 - Apellidos del alumn@.<br>
+                 - Seleccionamos el curso y el grupo del alumn@.<br>
+                 - Comedor: Seleccionar SI o NO.<br>
+                 - Transporte: Seleccionar SI o NO.<br>
+                 Y por último, <strong>"Guardar"</strong>.<br></p>
+    			<ul>
+                 <li> Si deseamos registrar otro niñ@ pulsamos <strong>"Modificar datos alumn@"</strong>.</li>
+                 <li> Si el alumn@ ya ha sido registrado previamente por algún familiar en otro dispositivo (móvil, tablet o pc), sólo debe introducir el número el Código del alumn@ y presione el botón<strong> "Modificar"</strong>,    apareciendo de forma automática los datos del alumn@. A continuación presionar el botón <strong>"Guardar"</strong>.<br></li>
+				 
+                <li>Para modificar los datos del alumn@, introduzca el Código, presione <strong>"Buscar"</strong>, corrija los campos y presione el botón <strong>"Guardar"</strong>.</li>
+               </ul>
+
+		     <a href="#" data-role="button" data-icon="mail" data-iconpos="notext" data-inline="true"></a><strong>Circulares</strong><br>
+             <ul>
+             <li>En este apartado se muestran todas la circulares enviadas por el Centro a nuestra aplicación móvil.</li>
+             <li> Presionando sobre el título de la circular accederá a su lectura.</li>
+             <li>Pulsando sobre el icono <strong>"X"</strong> se borrará la circular elegida.</li>
+             </ul>
+ <a href="#" data-role="button" data-icon="navigation" data-iconpos="notext" data-inline="true"></a><strong>Página Web</strong>
+ 	<ul>
+    <li> En esta opción accederá a la página web del Centro.</li>
+    </ul>
+<a href="#" data-role="button" data-icon="phone" data-iconpos="notext" data-inline="true"></a><strong>Contacto</strong>
+ 	<ul>
+    <li> Nuestro correo de contacto: info@creatactil.com.</li>
+    </ul>
+           </p>
+		      <center><strong>
+<label>&copy; Todos los derechos reservados creaTáctil. </label></strong><a href="" onClick="abrirweb('http://www.creatactil.com/micolegio/avisolegal/index.html')">Aviso Legal y Política de Privacidad</a></center>     
+	</div>
+    
+  <div data-role="footer" data-theme="a" data-position="fixed">
+    <div data-role="navbar" >
+    <ul>
+    <li><a href="#page1" data-role="button" data-transition="slide" onClick="globo()" data-icon="home">Inicio</a></li>
+    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img src="" class="globo" style="float:left; width:15px;">Circulares</a></li>
+    <li><a href="#" data-role="button" onClick="listafavorito()" data-icon="star">Favoritos</a></li>
+    <li><a href="#" data-role="button" onClick="listaweb()" data-icon="navigation">Web</a></li>
+    </ul>
+	</div>
+ 
+    </div>
+	 
+</div> 
+<!----------------------------PAGINA 6-------------------------------->
+<div data-role="page" id="page6" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"> </div>
+	
+    <div data-role="header" data-theme="a">
+    <a href="#page1" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo(), portada()" data-theme="a">Atrás</a>  
+	  <h1>PÁGINA WEB</h1>
+	</div> 
+	
+	 <div data-role="content" id="contenweb" >
+			
+		   <!-- Aqui se añade el listado de mensajes -->
+		  <ul data-role="listview"  id="listaweb"  data-inset="true" >
+		  	
+		  </ul>
+	   <center><div id="carga35"><img src="imagenes/cargando.gif" style="margin-top:10%"></div></center>
+       
+       
+	</div>
+   
+    <div data-role="footer" data-theme="a" data-position="fixed">
+    <div data-role="navbar" >
+    <ul>
+    <li><a href="#page1" data-role="button" data-transition="slide" onClick="globo()" data-icon="home">Inicio</a></li>
+    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img src="" class="globo" style="float:left; width:15px;">Circulares</a></li>
+    <li><a href="#" data-role="button" onClick="listafavorito()" data-icon="star">Favoritos</a></li>
+    <li><a href="#" data-role="button" onClick="listaweb()" data-icon="navigation">Web</a></li>
+    </ul>
+	</div>
+ 
+    </div>
+ 
+</div>
+
+<!----------------------------PAGINA 7-------------------------------->
+<div data-role="page" id="page7" data-theme="a" >
+	
+    <div data-role="header" data-theme="a"> 
+     
+	  <h1>Política de Privacidad y LOPD</h1>
+	</div> 
+	
+	 <div data-role="content" id="ley">
+     			<center>
+            <div data-role="controlgroup" data-type="horizontal">
+             <a href="#" data-role="button" data-rel="back" data-icon="back">Cancelar</a>
+			<a href="#" data-role="button" onClick="registrarFamiliar()" data-icon="check">Aceptar</a>
+            </div>
+            </center>
+     
+     
+			<p>
+            <strong>POLÍTICA DE TRATAMIENTO DE DATOS DE CARÁCTER PERSONAL </strong><br>
+            En cumplimiento de lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, se pone en conocimiento de los usuarios de este sitio web lo siguiente: <br>
+            
+<strong>1.</strong> Los datos que los usuarios faciliten a CREATÁCTIL S.L. serán incorporados a una base de datos de la que es titular y responsable CREATÁCTIL S.L., CIF B76629021.<br>
+<strong>2.</strong> Los usuarios garantizarán los datos de carácter personal, su veracidad, exactitud, autenticidad y vigencia. En este sentido, será obligación de los usuarios mantener actualizados los datos de forma tal que correspondan a la realidad en cada momento.<br>
+<strong>3.</strong> Al facilitar datos de carácter personal a CREATÁCTIL S.L., mediante la cumplimentación de formularios de recogida de datos o su envío a través de cualquier otro medio, los usuarios declaran aceptar plenamente y sin reservas la incorporación de los datos facilitados a los ficheros de la mercantil CREATÁCTIL S.L. y su tratamiento automatizado, en los términos estipulados en el presente documento.
+Los citados ficheros están oportunamente comunicados e inscritos en el Registro General de la Agencia española de Protección de Datos, al que los usuarios pueden acceder gratuitamente si así lo desean para comprobar su situación.<br> 
+<strong>4.</strong> La recogida de datos personales y su tratamiento automatizado tiene como finalidad posibilitar o facilitar la gestión, administración, mejora y ampliación de los distintos servicios, la elaboración de estadísticas, la gestión o seguimiento de incidencias, o servicios ofrecidos por info@creatactil.com.<br>
+<strong>5.</strong> CREATÁCTIL S.L en ningún caso venderá ni arrendará datos personales de los usuarios. El usuario podrá denegar o revocar su consentimiento mediante el envío de un e-mail a info@creatactil.com.<br>
+<strong>6.</strong> Los usuarios podrán ejercitar, en cualquier momento, los derechos de acceso, rectificación, cancelación y oposición de sus datos personales. El ejercicio de estos derechos podrá efectuarse mediante el envío de un e-mail a info@creatactil.com.<br>
+<strong>7.</strong> CREATÁCTIL S.L se compromete a no recabar información innecesaria sobre sus usuarios, a tratar con extrema diligencia la información personal que le puedan facilitar, y a cumplir en cualquier fase del tratamiento con la obligación de guardar secreto respecto de los datos facilitados por los usuarios. 
+Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de seguridad legalmente requeridos, para evitar la pérdida, mal uso, alteración, acceso no autorizado o robo de datos personales, implementando a dicho fin todos los medios y sistemas técnicos a su alcance, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos, ya provengan de la acción humana o del medio físico o natural. Ello no obstante, los usuarios deben ser conscientes de que las medidas de seguridad en Internet no son inexpugnables, y asumir los riegos que ello conlleva. <br>
+<strong>8.</strong> CREATÁCTIL S.L se reserva el derecho de modificar en cualquier momento su política de tratamiento y seguridad de datos personales, siempre respetando la legislación vigente en materia de protección de datos, y previa comunicación a los interesados, bien mediante publicación en esta misma página o en cualquier otro lugar del website, bien mediante e-mail a los interesados, o por cualquier otro medio de comunicación o difusión que se considere oportuno. 
+</p>
+		
+
+            </div>
+    
+ 
+</div>
+<!----------------------------PAGINA 8-------------------------------->
+<div data-role="page" id="page8" data-theme="a">
+	
+    <div data-role="header" data-theme="a">  
+	  <h1>Cial</h1>
+	</div> 
+	
+	 <div data-role="content" id="contenweb">
+			
+	<p>El Cial es el c&oacute;digo de identificaci&oacute;n del alumn@.</p>
+
+<p>&iquest;D&oacute;nde encontrarlo?:</p>
+
+<p>&nbsp;En la parte superior del Bolet&iacute;n de notas del alumn@ &oacute; solicitarlo&nbsp;<span style="line-height:1.6">en la Secretar&iacute;a del Centro.</span></p>
+
+	   
+	</div>
+    
+ 
+</div>
+
+
+<!----------------------------PAGINA 9-------------------->
+<div data-role="page" id="page9" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"> </div>
+	
+    <div data-role="header"  data-theme="a"> 
+    <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
+	  <h1>Islas</h1>
+	</div> 
+    
+	
+	 <div data-role="content" id="islas">
+		<div data-role="collapsible" data-inset="true">
+        <h3>Tenerife</h3>
+		  <ul data-role="listview"  id="Isla" data-inset="true">
+		  
+            	<li><a href="#page10" onClick="listacentros('12')">Adeje</a></li>
+                <li><a href="#page10" onClick="listacentros('48')">Arafo</a></li>
+                <li><a href="#page10" onClick="listacentros('51')">Arico</a></li>
+                <li><a href="#page10" onClick="listacentros('64')">Arona</a></li>
+                <li><a href="#page10" onClick="listacentros('103')">Buenavista del Norte</a></li>
+                <li><a href="#page10" onClick="listacentros('110')">Candelaria</a></li>
+                <li><a href="#page10" onClick="listacentros('125')">Fasnia</a></li>
+                <li><a href="#page10" onClick="listacentros('159')">Garachico</a></li>
+                <li><a href="#page10" onClick="listacentros('178')">Granadilla de Abona</a></li>
+                <li><a href="#page10" onClick="listacentros('184')">La Guancha</a></li>
+                <li><a href="#page10" onClick="listacentros('197')">Guía de Isora</a></li>
+                <li><a href="#page10" onClick="listacentros('201')">Güimar</a></li>
+                <li><a href="#page10" onClick="listacentros('223')">Icod de los Vinos</a></li>
+                <li><a href="#page10" onClick="listacentros('257')">La Matanza de Acentejo</a></li>
+                <li><a href="#page10" onClick="listacentros('260')">La Orotava</a></li>
+                <li><a href="#page10" onClick="listacentros('282')">Puerto de la Cruz</a></li>
+                <li><a href="#page10" onClick="listacentros('316')">Los Realejos</a></li>
+                <li><a href="#page10" onClick="listacentros('321')">El Rosario</a></li>
+                <li><a href="#page10" onClick="listacentros('239')">San Cristobal de la Laguna</a></li>
+                <li><a href="#page10" onClick="listacentros('342')">San Juan de la Rambla</a></li>
+                <li><a href="#page10" onClick="listacentros('355')">San Miguel de Abona</a></li>
+                <li><a href="#page10" onClick="listacentros('380')">Santa Cruz de Tenerife</a></li>
+                <li><a href="#page10" onClick="listacentros('393')">Santa Ursula</a></li>
+                <li><a href="#page10" onClick="listacentros('407')">Santiago del Teide</a></li>
+                <li><a href="#page10" onClick="listacentros('414')">El Sauzal</a></li>
+                <li><a href="#page10" onClick="listacentros('429')">Los Silos</a></li>
+                <li><a href="#page10" onClick="listacentros('435')">Tacoronte</a></li>
+                <li><a href="#page10" onClick="listacentros('440')">El Tanque</a></li>
+                <li><a href="#page10" onClick="listacentros('466')">Tegueste</a></li>
+                <li><a href="#page10" onClick="listacentros('511')">La Victoria de Acentejo</a></li>
+                <li><a href="#page10" onClick="listacentros('526')">Vilaflor</a></li>
+          </ul>
+          </div><!-- /collapsible -->
+          <div data-role="collapsible" data-inset="true">
+          <h3>La Gomera</h3>
+          <ul data-role="listview" data-inset="true">
+            	<li><a href="#page10" onClick="listacentros('27')">Agulo</a></li>
+                <li><a href="#page10" onClick="listacentros('33')">Alajeró</a></li>
+                <li><a href="#page10" onClick="listacentros('218')">Hermigua</a></li>
+                <li><a href="#page10" onClick="listacentros('368')">San Sebastian de la Gomera</a></li>
+                <li><a href="#page10" onClick="listacentros('491')">Valle Gran Rey</a></li>
+                <li><a href="#page10" onClick="listacentros('504')">Vallehermoso</a></li>
+                
+          </ul>
+          </div><!-- /collapsible -->
+          <div data-role="collapsible" data-inset="true">
+         	<h3>El Hierro</h3>
+            <ul data-role="listview" data-inset="true">
+            	<li><a href="#page10" onClick="listacentros('131')">Frontera</a></li>
+                <li><a href="#page10" onClick="listacentros('9013')">El Pinar de El Hierro</a></li>
+
+                <li><a href="#page10" onClick="listacentros('488')">Valverde</a></li>
+                
+                
+          </ul> 
+          </div><!-- /collapsible -->
+          <div data-role="collapsible" data-inset="true">
+          <h3>La Palma</h3>
+          <ul data-role="listview" data-inset="true">
+            	<li><a href="#page10" onClick="listacentros('70')">Barlovento</a></li>
+                <li><a href="#page10" onClick="listacentros('86')">Breña Alta</a></li>
+                <li><a href="#page10" onClick="listacentros('99')">Breña Baja</a></li>
+                <li><a href="#page10" onClick="listacentros('146')">Fuencaliente</a></li>
+                <li><a href="#page10" onClick="listacentros('162')">Garafía</a></li>
+                <li><a href="#page10" onClick="listacentros('244')">Los Llanos de Aridane</a></li>
+                <li><a href="#page10" onClick="listacentros('276')">El Paso</a></li>
+                <li><a href="#page10" onClick="listacentros('295')">Puntagorda</a></li>
+                <li><a href="#page10" onClick="listacentros('309')">Puntallana</a></li>
+                <li><a href="#page10" onClick="listacentros('337')">San Andrés y Sauce</a></li>
+                <li><a href="#page10" onClick="listacentros('374')">Santa Cruz de la Palma</a></li>
+                <li><a href="#page10" onClick="listacentros('453')">Tazacorte</a></li>
+                <li><a href="#page10" onClick="listacentros('472')">Tijarafe</a></li>
+                <li><a href="#page10" onClick="listacentros('532')">Villa de Mazo</a></li>
+          </ul>
+          </div><!-- /collapsible -->
+          <div data-role="collapsible" data-inset="true">
+          <h3>Gran Canaria</h3>
+          <ul data-role="listview" data-inset="true">
+            	<li><a href="#page10" onClick="listacentros('17')">Agaete</a></li>
+                <li><a href="#page10" onClick="listacentros('22')">Agüimes</a></li>
+                <li><a href="#page10" onClick="listacentros('56')">Artenara</a></li>
+                <li><a href="#page10" onClick="listacentros('69')">Arucas</a></li>
+                <li><a href="#page10" onClick="listacentros('81')">Firgas</a></li>
+                <li><a href="#page10" onClick="listacentros('94')">Gáldar</a></li>
+                <li><a href="#page10" onClick="listacentros('115')">Ingenio</a></li>
+                <li><a href="#page10" onClick="listacentros('120')">Mogán</a></li>
+                <li><a href="#page10" onClick="listacentros('136')">Moya</a></li>
+                <li><a href="#page10" onClick="listacentros('167')">Las Palmas</a></li>
+        </ul>
+        </div><!-- /collapsible -->
+        <div data-role="collapsible" data-inset="true">
+        <h3>Fuerteventura</h3>
+        <ul data-role="listview" data-inset="true">
+            	<li><a href="#page10" onClick="listacentros('38')">Antigua</a></li>
+                <li><a href="#page10" onClick="listacentros('75')">Bentacuria</a></li>
+                <li><a href="#page10" onClick="listacentros('141')">La Oliva</a></li>
+                <li><a href="#page10" onClick="listacentros('154')">Pájara</a></li>
+                <li><a href="#page10" onClick="listacentros('173')">Puerto del Rosario</a></li>
+                <li><a href="#page10" onClick="listacentros('304')">Tuineje</a></li>
+         </ul>  
+         </div><!-- /collapsible -->
+         <div data-role="collapsible" data-inset="true">
+         <h3>Lanzarote</h3>
+         <ul data-role="listview" data-inset="true">
+            	<li><a href="#page10" onClick="listacentros('43')">Arrecife</a></li>
+                <li><a href="#page10" onClick="listacentros('108')">Haría</a></li>
+                <li><a href="#page10" onClick="listacentros('189')">San Bartolomé</a></li>
+                <li><a href="#page10" onClick="listacentros('249')">Teguise</a></li>
+                <li><a href="#page10" onClick="listacentros('287')">Tías</a></li>
+                <li><a href="#page10" onClick="listacentros('290')">Tinajo</a></li>
+                <li><a href="#page10" onClick="listacentros('347')">Yaiza</a></li>
+         </ul>  
+        
+         </ul> 
+          </div><!-- /collapsible -->
+	   
+	</div>
+    
+ 
+</div>
+<!------FIN PAGINA 9------------------------------------------>
+<!------PAGINA 10----------------------------------------->
+<div data-role="page" id="page10" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"> </div>
+	
+    <div data-role="header" data-theme="a">  
+	  <a href="#page9" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
+      <h1>Centros Educativos</h1>
+	</div> 
+	
+	 <div data-role="content" id="centros">
+			
+		   <!-- Aqui se añade el listado de centros -->
+		  <ul data-role="listview"  data-theme="c" id="listacentros"  data-inset="true" data-filter="true" data-filter-placeholder="Buscar por Nombre..." >
+		  	
+            
+		  </ul>
+	   
+	</div>
+    
+ 
+</div>
+
+<!------FIN PAGINA 10------------------------------------------>
+<!---------------------------- PAGINA 11 -------------------------------->
+<div data-role="page" id="page11" data-theme="a" >
+	
+    <div data-role="header" data-theme="a">  
+	  <h1>Firmar Autorización</h1>
+	</div> 
+	
+	 <div data-role="content" id="firma">
+	   <p>
+           <strong>Confirmación Paterna, Materna o Tutor Legal:</strong></p>
+	   		<br>
+           	<label>Nº de registro: </label><span id="registrofirma"></span>
+            <br>
+            <label>Nombre: </label><span id="nombrefirma"></span>
+            <br>
+            <span id="cialfirma" hidden="true"></span>        
+            
+           
+            
+            <br>
+            <span id="codigofirma" hidden="true"></span>
+	   </p>
+		
+		 
+	   	    
+            <center>
+            <div data-role="controlgroup" data-type="horizontal">
+             <a href="#" data-role="button" data-rel="back" data-icon="back">Cancelar</a>
+			<a href="#" data-role="button" onClick="firma()" data-icon="check">Aceptar</a>
+            </div>
+            </center>
+            </div>
+    
+ 
+</div>
+<!----------------- FIN PAGINA 11 -------------------->
+<!---------------------------- PAGINA 12 -------------------------------->
+<div data-role="page" id="page12" data-theme="a" >
+	
+    <div data-role="header" data-theme="a" >  
+	  <h1>Añadir alumn@</h1>
+	</div> 
+	
+	 <div data-role="content" id="nuevoalumno">
+	   		<p>
+           ¿Quiere añadir otro alumn@?
+	   		
+	   </p>
+		
+		 
+	   	    
+            <center>
+            <div data-role="controlgroup" data-type="horizontal">
+             <a href="#page1" data-role="button" data-icon="back" onClick="globo(), portada()">No</a>
+			<a href="#page3" data-role="button" onClick="nuevoAlumno()" data-icon="check">Si</a>
+            </div>
+            </center>
+            </div>
+    
+ 
+</div>
+<!----------------- FIN PAGINA 12 -------------------->
+
+
+
+<!---------------------------- PAGINA 14 -------------------------------->
+
+<div data-role="page" id="page14" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"> </div>
+	
+    <div data-role="header"  data-theme="a">   
+	  <a href="#page1" data-role="button" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
+      <h1>FAVORITOS</h1>
+	
+    </div> 
+	
+	 <div data-role="content" id="contenido14">
+			
+		   <!-- Aqui se añade el listado de mensajes -->
+		  <ul data-role="listview"  id="listafav"  data-inset="true">
+		  </ul>
+          
+           <ul data-role="listview"  id="listafav1"  data-inset="true" >
+		  </ul>
+	 		<center><div id="carga14"><img src="imagenes/cargando.gif" style="margin-top:10%"></div></center>
+    		<br><br><br><br><br><br><br><br>
+</div> 
+     
+    <!--Pie de pagina -->
+ <div data-role="footer" data-theme="a" data-position="fixed" id="piepagina14">
+    
+    </div>
+   <!--Final Pie de pagina -->
+    
+ 
+</div>
+<!---------------------------- FIN PAGINA 14 --------------------------------> 
+<!----------------------------PAGINA 15------------------->
+<div data-role="page" id="page15" data-theme="a">
+	 <div style="height:20px; visibility:hidden"> </div>
+	
+    <div data-role="header" data-theme="a" > 
+    <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
+	  <h1>Ciclos</h1>
+	</div> 
+    
+	
+	 <div data-role="content" id="ciclos">
+		<div data-role="collapsible" data-inset="true">
+        	<h3>Infantil y Primaria</h3>
+		  <ul data-role="listview"  id="infprim"  data-inset="true">
+		  	   	<li><a href="#" onClick="ponercurso('INF 3A', 'Infantil 3 años' )">Infantil 3 años</a></li>
+                <li><a href="#" onClick="ponercurso('INF 4A', 'Infantil 4 años')">Infantil 4 años</a></li>
+                <li><a href="#" onClick="ponercurso('INF 5A', 'Infantil 5 años')">Infantil 5 años</a></li>
+                <li><a href="#" onClick="ponercurso('1 PRIM', '1º Primaria')">1º Primaria</a></li>
+                <li><a href="#" onClick="ponercurso('2 PRIM', '2º Primaria')">2º Primaria</a></li>
+                <li><a href="#" onClick="ponercurso('3 PRIM', '3º Primaria')">3º Primaria</a></li>
+                <li><a href="#" onClick="ponercurso('4 PRIM', '4º Primaria')">4º Primaria</a></li>
+                <li><a href="#" onClick="ponercurso('5 PRIM', '5º Primaria')">5º Primaria</a></li>
+                <li><a href="#" onClick="ponercurso('6 PRIM', '6º Primaria')">6º Primaria</a></li>
+                <li><a href="#" onClick="ponercurso('ENCL', 'Aula Enclave')">Aula Enclave</a></li>
+          </ul>
+          </div>
+          <div data-role="collapsible" data-inset="true">
+          	<h3>ESO y Bachillerato</h3>
+          <ul data-role="listview" data-inset="true">
+            	<li><a href="#" onClick="ponercurso('1 ESO', '1º ESO')">1º ESO</a></li>
+                <li><a href="#" onClick="ponercurso('2 ESO', '2º ESO')">2º ESO</a></li>
+                <li><a href="#" onClick="ponercurso('3 ESO', '3º ESO')">3º ESO</a></li>
+                <li><a href="#" onClick="ponercurso('4 ESO', '4º ESO')">4º ESO</a></li>
+                <li><a href="#" onClick="ponercurso('1 BAC', '1º Bachiller' )">1º Bachiller</a></li>
+                <li><a href="#" onClick="ponercurso('2 BAC', '2º Bachillerato' )">2º Bachiller</a></li>
+                <li><a href="#" onClick="ponercurso('ENCL', 'Aula Enclave')">Aula Enclave</a></li>
+          </ul>
+         </div>
+          
+         <div data-role="collapsible" data-inset="true">
+         <h3>FP Básico</h3>
+         <ul id="listafpb" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+         	
+            	
+                
+                
+         </ul>
+         </div>
+         
+         <div data-role="collapsible" data-inset="true">
+         <h3>FP Grado Medio</h3>
+         <ul id="listafpm" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+            	
+                
+                
+          </ul>
+         </div>
+         
+         <div data-role="collapsible" data-inset="true">
+         <h3>FP Grado Superior</h3>
+         <ul id="listafps" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+            	
+                
+                
+          </ul>
+         </div>
+	   </ul>
+       
+	</div>
+    
+ 
+</div>
+<!------FIN PAGINA 15----------------------------------------> 
+<!----------------------------PAGINA 16------------------->
+<div data-role="page" id="page16" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"> </div>
+	
+    <div data-role="header"  data-theme="a"> 
+    <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
+	  <h1>Grupos</h1>
+	</div> 
+    
+	
+	 <div data-role="content" id="pggrupos">
+		
+		  <ul data-role="listview"  id="listagrupo"  data-inset="true">
+		 
+        
+         </ul> 
+          
+	   
+	</div>
+    
+ 
+</div>
+<!------FIN PAGINA 16----------------------------------------> 
+
+
+  
+</body>
+</html>
