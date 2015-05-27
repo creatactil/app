@@ -1,7 +1,7 @@
 function init(){
 	
 	var xdni = localStorage.dni;
-	alert(xdni);
+	//alert(xdni);
 	
 	
 	
