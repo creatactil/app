@@ -1,12 +1,14 @@
 function listaweb(data) {
 			
+	
+			
+				
 			$.mobile.changePage("#page6", {transition: "slide"},
             true,
             true);
 				
     		$('#listaweb').empty();
-                                          
-			var xdni = localStorage.dni;
+           
 			$("#carga35").show();
 			
 			$.ajax({

@@ -1,6 +1,8 @@
 function listafavorito() {
 				
-    	var xdni = localStorage.dni;
+ 
+		
+		
 		$.mobile.changePage("#page14", {transition: "slide"},
             true,
             true);

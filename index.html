@@ -38,6 +38,7 @@
 	
 </script>
 
+
 <style type="text/css">
 .granate {
 	color: #542876;
@@ -54,10 +55,12 @@
 <script src="js/borrarmensaje.js"></script>
 <script src="js/borrafavorito.js"></script>
 <script src="js/buscarAlumno.js"></script>
+<script src="js/desplazar.js"></script>
 <script src="js/mostrarDatos.js"></script>
 <script src="js/validarDni2.js"></script>
 <script src="js/registrarFamiliar.js"></script>
 <script src="js/registrarAlumno.js"></script>
+<script src="js/registrarMaestro.js"></script>
 <script src="js/nuevoAlumno.js"></script>
 <script src="js/listamensajes.js"></script>
 <script src="js/listaweb.js"></script>
@@ -74,6 +77,7 @@
 <script src="js/favorito.js"></script>
 <script src="js/web.js"></script>
 <script src="js/onLoad.js"></script>
+<script src="js/paginamaestro.js"></script>
 <script src="js/ponercurso.js"></script>
 <script src="js/listafpb.js"></script>
 <script src="js/listafpm.js"></script>
@@ -197,12 +201,14 @@
           <option value="PADRE">Padre</option>
           <option value="TUTOR">Tutor Legal</option>
           <option value="PERSONA AUTORIZADA">Persona Autorizada</option>
+          <option value="ALUMNO">Alumno (Mayor de edad)</option>
           <option value="MAESTRO">Maestro/Profesor</option>
+          
        </select>
       
         
-        <label for="nombre_familiar">Nombre y apellidos del familiar:</label>
-        <input name="nombre_familiar" type="text" id="nombre_familiar" value="" placeholder="Padre/Madre o Tutor etc.">
+         <label for="nombre_familiar">Nombre</label>
+        <input id="nombre_familiar" name="nombre_familiar" type="text" value="" placeholder="Padre/Madre o Tutor etc.">
         
         <label for="telefono">Teléfono móvil:</label>
         <input name="telefono" type="number" maxlength="9" id="telefono" placeholder="Telefono">
@@ -216,7 +222,7 @@
        <label for="correo">Contraseña:</label>
        <input name="pa1" id="pa1" type="password" placeholder="Max. 20 caracteres">
        
-      	 
+      
        
           
            <input name="regId" id="regId" type="hidden">    
@@ -232,12 +238,13 @@
      		<!-- Botones de registro ------>		
  		 <fieldset class="ui-grid-a">
            <div class="ui-block-a">
- <a href="#page7" data-role="button" data-transition="slide" data-icon="check" id="enviadatos" style="margin-left:1em; margin-right:5%">Guardar</a>
+ <a id="enviadatos" class="btn_guardar" href="#page7" data-role="button" data-transition="slide" data-icon="check" style="margin-left:1em; margin-right:5%">Guardar</a>
  			</div>
     		 <div class="ui-block-b">
-    <a data-role="button" name="link" href="" data-icon="plus" onClick="validarDni2()" style="margin-right:1em; margin-left:5%">Modificar Datos Alumn@s</a>
-    		</div>
-            </fieldset>
+    <a id="mod_datos" class="btn_modificar" data-role="button" name="link" href="" data-icon="plus" onClick="validarDni2()" style="margin-right:1em; margin-left:5%">Modificar Datos Alumn@s</a>
+    	 	</div>
+            
+  
     <br>
     <br>
     <br>
@@ -247,7 +254,10 @@
     <br>
     <br>
     <br>
-    <br>				
+    <br>	
+     <br>
+    <br>
+    <br>			
     
     <!-- Pie de pagina dos -->  
 	<div data-role="footer" data-position="fixed" data-theme="a">
@@ -263,7 +273,7 @@
 <div data-role="page" id="page3" data-theme="a">
 	 <div style="height:20px; visibility:hidden"> </div>
     
-    <div data-role="header" data-theme="a" data-position="fixed">
+    <div data-role="header" data-theme="a">
 		<a href="#page2" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a">Atrás</a>
     	<h1>DATOS ALUMN@</h1>
        
@@ -381,11 +391,82 @@
 </div>
 </div>
 
+<!----------------------------PAGINA 3b-------------------------------->
+<div data-role="page" id="page3b" data-theme="a">
+	<div style="height:20px; visibility:hidden"> </div> 
+    
+    <div data-role="header" data-theme="a">
+		<a href="#page2" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a">Atrás</a>
+    	<h1>MAESTRO/PROFESOR</h1>
+       
+    </div>
+	
+    <div data-role="content">	
+		
+        
+        <form name="formulario3" id="formulario3" data-ajax="false">
+        
+        <label>Código del maestro/profesor:</label>
+        <input id="cial_profe" name="cial_profe" type="text"  placeholder="Código del maestro/profesor">
+        
+        <label>Nombre:</label>
+        <input id="nombre_profe" name="nombre_profe" type="text" placeholder="Nombre del maestro/profesor">
+       
+       	<label>Apellidos:</label>
+        <input id="apellidos_profe" name="apellidos_profe" type="text" placeholder="Apellidos del maestro/profesor">
+        
+        <label>Teléfono móvil:</label>
+        <input id="telefono_profe" name="telefono_profe" type="number" maxlength="9" id="telefono" placeholder="Teléfono">
+        
+        <input id="dni_profe" name="dni_profe"  type="hidden">  
+          
+          
+        <label>Correo electrónico:</label>
+        <input id="correo_profe" name="correo_profe" type="text" placeholder="Correo electrónico">
+        
+        <label for="correo">Contraseña:</label>
+       <input name="pa1_profe" id="pa1_profe" type="password" placeholder="Max. 20 caracteres">
+       
+       
+       <!--	  
+       <label>Contraseña:</label>
+       <input id="contra_profe" name="contra_profe" type="password" placeholder="Max. 20 caracteres">
+       -->
+        
+      
+     </form>
+    
+   <!-- Botones de registro -->
+     
+   </div>
+     <a href="#page7b" data-role="button" data-transition="slide" data-icon="check" id="enviadatos" style="margin-left:1em; margin-right:5%">Guardar</a>
+ 		<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>		
+      <a id='lnkDialog' href="#page12" data-rel="dialog" data-transition="pop" style='display:none;'></a> 
+ <!-- Pie de pagina 3 -->
+
+</div>
+</div>
+
+
+
 <!----------------------------PAGINA 4-------------------------------->
 <div data-role="page" id="page4" data-theme="a" >
-	 <div style="height:20px; visibility:hidden"> </div>
+<div style="height:20px; visibility:hidden"> </div>
      
-    <div data-role="header" data-theme="a" data-position="fixed">   
+    <div data-role="header" data-theme="a" >   
 	  <a href="#page1" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo(), portada()" data-theme="a">Atrás</a>
       <h1>CIRCULARES</h1>
 	<!--<a href="#page1" data-role="button" data-icon="home" onClick="inicio()">Inicio</a> -->
@@ -419,7 +500,7 @@
 <div data-role="page" id="page5" data-theme="a">
 	 <div style="height:20px; visibility:hidden"> </div>
      
-	<div data-role="header" data-theme="a" data-position="fixed">
+	<div data-role="header" data-theme="a" >
     <a href="#page1" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo(), portada()" data-theme="a">Atrás</a>
 		<h1>PÁGINA DE AYUDA</h1>
 	</div>
@@ -554,6 +635,46 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
     
  
 </div>
+
+<!----------------------------PAGINA 7b-------------------------------->
+<div data-role="page" id="page7b" data-theme="a" >
+	
+    <div data-role="header" data-theme="a"> 
+     
+	  <h1>Política de Privacidad y LOPD</h1>
+	</div> 
+	
+	 <div data-role="content" id="ley">
+     			<center>
+            <div data-role="controlgroup" data-type="horizontal">
+             <a href="#" data-role="button" data-rel="back" data-icon="back">Cancelar</a>
+			<a href="#" data-role="button" onClick="registrarMaestro()" data-icon="check">Aceptar</a>
+            </div>
+            </center>
+     
+     
+			<p>
+            <strong>POLÍTICA DE TRATAMIENTO DE DATOS DE CARÁCTER PERSONAL </strong><br>
+            En cumplimiento de lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, se pone en conocimiento de los usuarios de este sitio web lo siguiente: <br>
+            
+<strong>1.</strong> Los datos que los usuarios faciliten a CREATÁCTIL S.L. serán incorporados a una base de datos de la que es titular y responsable CREATÁCTIL S.L., CIF B76629021.<br>
+<strong>2.</strong> Los usuarios garantizarán los datos de carácter personal, su veracidad, exactitud, autenticidad y vigencia. En este sentido, será obligación de los usuarios mantener actualizados los datos de forma tal que correspondan a la realidad en cada momento.<br>
+<strong>3.</strong> Al facilitar datos de carácter personal a CREATÁCTIL S.L., mediante la cumplimentación de formularios de recogida de datos o su envío a través de cualquier otro medio, los usuarios declaran aceptar plenamente y sin reservas la incorporación de los datos facilitados a los ficheros de la mercantil CREATÁCTIL S.L. y su tratamiento automatizado, en los términos estipulados en el presente documento.
+Los citados ficheros están oportunamente comunicados e inscritos en el Registro General de la Agencia española de Protección de Datos, al que los usuarios pueden acceder gratuitamente si así lo desean para comprobar su situación.<br> 
+<strong>4.</strong> La recogida de datos personales y su tratamiento automatizado tiene como finalidad posibilitar o facilitar la gestión, administración, mejora y ampliación de los distintos servicios, la elaboración de estadísticas, la gestión o seguimiento de incidencias, o servicios ofrecidos por info@creatactil.com.<br>
+<strong>5.</strong> CREATÁCTIL S.L en ningún caso venderá ni arrendará datos personales de los usuarios. El usuario podrá denegar o revocar su consentimiento mediante el envío de un e-mail a info@creatactil.com.<br>
+<strong>6.</strong> Los usuarios podrán ejercitar, en cualquier momento, los derechos de acceso, rectificación, cancelación y oposición de sus datos personales. El ejercicio de estos derechos podrá efectuarse mediante el envío de un e-mail a info@creatactil.com.<br>
+<strong>7.</strong> CREATÁCTIL S.L se compromete a no recabar información innecesaria sobre sus usuarios, a tratar con extrema diligencia la información personal que le puedan facilitar, y a cumplir en cualquier fase del tratamiento con la obligación de guardar secreto respecto de los datos facilitados por los usuarios. 
+Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de seguridad legalmente requeridos, para evitar la pérdida, mal uso, alteración, acceso no autorizado o robo de datos personales, implementando a dicho fin todos los medios y sistemas técnicos a su alcance, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos, ya provengan de la acción humana o del medio físico o natural. Ello no obstante, los usuarios deben ser conscientes de que las medidas de seguridad en Internet no son inexpugnables, y asumir los riegos que ello conlleva. <br>
+<strong>8.</strong> CREATÁCTIL S.L se reserva el derecho de modificar en cualquier momento su política de tratamiento y seguridad de datos personales, siempre respetando la legislación vigente en materia de protección de datos, y previa comunicación a los interesados, bien mediante publicación en esta misma página o en cualquier otro lugar del website, bien mediante e-mail a los interesados, o por cualquier otro medio de comunicación o difusión que se considere oportuno. 
+</p>
+		
+
+            </div>
+    
+ 
+</div>
+
 <!----------------------------PAGINA 8-------------------------------->
 <div data-role="page" id="page8" data-theme="a">
 	
@@ -580,7 +701,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
 <div data-role="page" id="page9" data-theme="a" >
 	 <div style="height:20px; visibility:hidden"> </div>
 	
-    <div data-role="header"  data-theme="a" data-position="fixed" > 
+    <div data-role="header"  data-theme="a" > 
     <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
 	  <h1>Islas</h1>
 	</div> 
@@ -716,7 +837,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
 <div data-role="page" id="page10" data-theme="a" >
 	 <div style="height:20px; visibility:hidden"> </div>
 	
-    <div data-role="header" data-theme="a" data-position="fixed">  
+    <div data-role="header" data-theme="a" >  
 	  <a href="#page9" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
       <h1>Centros Educativos</h1>
 	</div> 
@@ -805,7 +926,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
 <div data-role="page" id="page14" data-theme="a" >
 	 <div style="height:20px; visibility:hidden"> </div>
 	
-    <div data-role="header"  data-theme="a" data-position="fixed">   
+    <div data-role="header"  data-theme="a" >   
 	  <a href="#page1" data-role="button" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
       <h1>FAVORITOS</h1>
 	
@@ -836,7 +957,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
 <div data-role="page" id="page15" data-theme="a">
 	 <div style="height:20px; visibility:hidden"> </div>
 	
-    <div data-role="header" data-theme="a" data-position="fixed"> 
+    <div data-role="header" data-theme="a"> 
     <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
 	  <h1>Ciclos</h1>
 	</div> 
@@ -909,7 +1030,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
 <div data-role="page" id="page16" data-theme="a" >
 	 <div style="height:20px; visibility:hidden"> </div>
 	
-    <div data-role="header"  data-theme="a" data-position="fixed"> 
+    <div data-role="header"  data-theme="a" > 
     <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
 	  <h1>Grupos</h1>
 	</div> 
