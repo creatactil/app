@@ -85,7 +85,7 @@ function crearLista() {
 								  '<br>'+
 								  '<br>'+
 								  '<br>'+
-								  '<a href="#page11" style="color:#900"  data-rel="dialog" onClick="textofirma(\''+item.registro+'\' ), textofirma3(\''+item.cial+'\' ), textofirma2(\''+item.nombre_alumno+'\' ), textofirma4(\''+item.codigo+'\' ) ">'+item.firma+'</a>'+
+								  '<a href="#page11" style="color:#900"  data-transition="pop" onClick="textofirma(\''+item.registro+'\' ), textofirma3(\''+item.cial+'\' ), textofirma2(\''+item.nombre_alumno+'\' ), textofirma4(\''+item.codigo+'\' ) ">'+item.firma+'</a>'+
 								   '<br>'+
 								  '<br>'+
 								  '<center>'+
