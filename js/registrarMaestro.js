@@ -11,7 +11,7 @@
 				var xregid = $("#regId").val();
 				
 				
-				var xdni = xtelefono+xnombre.substring(0, 3);
+				var xdni = xtelefono+xnombre.substring(0, 1);
 				
 				
 		if(xnombre == ""){

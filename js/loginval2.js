@@ -8,12 +8,12 @@ function loginVal2(){
 		var xpa2 = $("#pa2").val().toUpperCase();	
 		
 		if(document.form2.usuario.value.length == ""){
-			navigator.notification.alert("Introduzca su correo electrónico"); 
+			alert("Introduzca su correo electrónico"); 
 			document.form2.usuario.focus();
 			return false;
 			
 		}else if(document.form2.pa2.value.length ==  ""){
-			navigator.notification.alert("Escriba contraseña ");
+			alert("Escriba contraseña ");
 			document.form2.pa2.focus();
 			return false;
 						

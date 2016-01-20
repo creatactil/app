@@ -42,7 +42,7 @@ function crearLista() {
 			'<li class="ui-li-has-alt ui-li-has-thumb ui-first-child ui-last-child" ><a href="#" class="ui-btn" onclick="changePage(id_' + index + '), contador(\''+registro+'\');" style="height: 65px">'+
 			'<img src="http://mc.creatactil.com/logo/'+item.codigo+'.jpg" class="ui-li-thumb" style="margin-top: 0.2em; margin-left: 0.2em">'+
        	'<h3 style="color:'+tema+'; margin-top: 0em; margin-left: -1.4em">'+item.titulo+'</h3>'+
-		'<p style="color:'+vino+'; margin-left: -1.8em "><strong>'+'Alumno:  '+item.nombre_alumno+'</strong><br>'+
+		'<p style="color:'+vino+'; margin-left: -1.8em "><strong>'+'Nombre:  '+item.nombre_alumno+'</strong><br>'+
     	''+'Centro:  '+item.nombre_centro+'<br>'+
     	''+'Fecha: '+''+item.fecha+'</p>'+
 		'<a data-icon="delete" class="ui-btn ui-btn-icon-notext ui-icon-delete" title=""></a>'+
@@ -73,7 +73,7 @@ function crearLista() {
 					'<div data-role="content" id="contenido" >' +
 					'<p>' +
                     '<div data-role="fieldcontain" class="result" >' +
-                    '<p style="margin:0; padding:0; color:#ae5b66; font-size: 0.7em ">Alumno: '+item.nombre_alumno+'<br>'+
+                    '<p style="margin:0; padding:0; color:#ae5b66; font-size: 0.7em ">Nombre: '+item.nombre_alumno+'<br>'+
 					'Nº de Registro: '+item.registro+'<br>'+
                     ''+item.nombre_centro+'<br>'+
                     'Fecha: '+item.fecha+'</p>'+

@@ -9,7 +9,7 @@ function registrarFamiliar() {
 				
 				var xregid = $("#regId").val();
 								
-				var xdni = xtelefono+xnombre.substring(0, 3);
+				var xdni = xtelefono+xnombre.substring(0, 1);
 				
 		if(document.formulario1.nombre_familiar.value.length == ""){
 		alert("Escriba su nombre");

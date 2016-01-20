@@ -70,7 +70,8 @@
 <script src="js/listamensajes.js"></script>
 <script src="js/listaweb.js"></script>
 <script src="js/listafavorito.js"></script>
-<script src="js/listacentros.js"></script>
+<script src="js/listacentros2.js"></script>
+<script src="js/listacomunidades.js"></script>
 <script src="js/globo.js"></script>
 <script src="js/inicio.js"></script>
 <script src="js/init.js"></script>
@@ -93,7 +94,42 @@
 
 </head> 
 <body onLoad="init()"> 
-<!------------------------------------------------------------------------PAGINA 0---------------------------------------------------------------------->
+
+<!-------------------------------------PAGINA PORTADA---------------------------------------------------------------------->
+<div data-role="page" data-theme="a" id="portada">
+	<div style="height:20px; visibility:hidden"> </div>
+   <div data-role="header">
+    <h1>miColegioApp</h1>
+  </div>
+	
+  <div data-role="main" class="ui-content" >
+      				<br>
+                  
+         		<center><img src="imagenes/300.png" width="50%"/>
+                <br>
+                <br>
+                <br>
+                
+                <label>Si eres nuevo Regístrate o accede con tu correo electrónico y contraseña.</label>
+                <br>
+                        
+                <a data-role="button" data-icon="edit" href="#page2" style="width:65px; color: #000;  text-shadow:none" data-inline="true">Registro</a>
+                              		
+                  <a href="#pagina0" data-role="button"  data-icon="check" data-transition="slide" data-inline="true" style="width:65px;  color: #000;  text-shadow:none">Acesso</a> </center>      
+  </div>
+                      
+
+
+  <div data-role="footer" data-position="fixed">
+   
+   	<label style="font-size:15px;"><center>&copy; Todos los derechos reservados creaTáctil</center></label>
+   
+  </div>
+  
+</div> 
+<!---------------FIN PAGINA PORTADA--------------------------------------->
+
+<!-----------PAGINA 0---------------------------------------------------------------------->
 <div data-role="page" data-theme="a" id="pagina0">
 <div style="height:20px; visibility:hidden"> </div>
   <div data-role="header">
@@ -159,7 +195,7 @@
     </div >
     
     <div data-role="main" class="ui-content" style="margin:0; padding:0; position:fixed; width:100%">
-    <img id="portada" src="" height="0%" width="100%">
+    <img id="portada" src="imgportada/0.jpg" height="0%" width="100%">
     </div>
     
     <!--footer-->  
@@ -264,14 +300,7 @@
     <br>
     <br>			
     
-    <!-- Pie de pagina dos -->  
-	<div data-role="footer" data-position="fixed" data-theme="a">
-	        <div data-role="controlgroup" >
-           
-            
-            </div>
-    </div>
-	
+    	
 </div>
 
 <!----------------------------PAGINA 3-------------------------------->
@@ -318,7 +347,7 @@
             <input name="codigo" type="number" maxlength="8" id="codigo" placeholder="Presione Buscar.." ></div>
         	    		
           <div class="ui-block-b">
-          <a href="#page9" data-role="button" data-icon="search">Buscar código</a></div>
+          <a href="#comunidad" onClick="listacomunidades()" data-role="button" data-icon="search">Buscar código</a></div>
         </fieldset>
    
    
@@ -700,168 +729,19 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
     
  
 </div>
-
-
-<!----------------------------PAGINA 9-------------------->
-<div data-role="page" id="page9" data-theme="a" >
-	 <div style="height:20px; visibility:hidden"> </div>
+<!------PAGINA COMUNIDADES--------------------------------------->
+<div data-role="page" id="comunidad" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"></div>
 	
-    <div data-role="header"  data-theme="a" > 
-    <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a> 
-	  <h1>Islas</h1>
-	</div> 
-    
-	
-	 <div data-role="content" id="islas">
-		<div data-role="collapsible" data-inset="true">
-        <h3>Tenerife</h3>
-		  <ul data-role="listview"  id="Isla" data-inset="true">
-		  
-            	<li><a href="#page10" onClick="listacentros('12')">Adeje</a></li>
-                <li><a href="#page10" onClick="listacentros('48')">Arafo</a></li>
-                <li><a href="#page10" onClick="listacentros('51')">Arico</a></li>
-                <li><a href="#page10" onClick="listacentros('64')">Arona</a></li>
-                <li><a href="#page10" onClick="listacentros('103')">Buenavista del Norte</a></li>
-                <li><a href="#page10" onClick="listacentros('110')">Candelaria</a></li>
-                <li><a href="#page10" onClick="listacentros('125')">Fasnia</a></li>
-                <li><a href="#page10" onClick="listacentros('159')">Garachico</a></li>
-                <li><a href="#page10" onClick="listacentros('178')">Granadilla de Abona</a></li>
-                <li><a href="#page10" onClick="listacentros('184')">La Guancha</a></li>
-                <li><a href="#page10" onClick="listacentros('197')">Guía de Isora</a></li>
-                <li><a href="#page10" onClick="listacentros('201')">Güimar</a></li>
-                <li><a href="#page10" onClick="listacentros('223')">Icod de los Vinos</a></li>
-                <li><a href="#page10" onClick="listacentros('257')">La Matanza de Acentejo</a></li>
-                <li><a href="#page10" onClick="listacentros('260')">La Orotava</a></li>
-                <li><a href="#page10" onClick="listacentros('282')">Puerto de la Cruz</a></li>
-                <li><a href="#page10" onClick="listacentros('316')">Los Realejos</a></li>
-                <li><a href="#page10" onClick="listacentros('321')">El Rosario</a></li>
-                <li><a href="#page10" onClick="listacentros('239')">San Cristobal de la Laguna</a></li>
-                <li><a href="#page10" onClick="listacentros('342')">San Juan de la Rambla</a></li>
-                <li><a href="#page10" onClick="listacentros('355')">San Miguel de Abona</a></li>
-                <li><a href="#page10" onClick="listacentros('380')">Santa Cruz de Tenerife</a></li>
-                <li><a href="#page10" onClick="listacentros('393')">Santa Ursula</a></li>
-                <li><a href="#page10" onClick="listacentros('407')">Santiago del Teide</a></li>
-                <li><a href="#page10" onClick="listacentros('414')">El Sauzal</a></li>
-                <li><a href="#page10" onClick="listacentros('429')">Los Silos</a></li>
-                <li><a href="#page10" onClick="listacentros('435')">Tacoronte</a></li>
-                <li><a href="#page10" onClick="listacentros('440')">El Tanque</a></li>
-                <li><a href="#page10" onClick="listacentros('466')">Tegueste</a></li>
-                <li><a href="#page10" onClick="listacentros('511')">La Victoria de Acentejo</a></li>
-                <li><a href="#page10" onClick="listacentros('526')">Vilaflor</a></li>
-          </ul>
-          </div><!-- /collapsible -->
-          <div data-role="collapsible" data-inset="true">
-          <h3>La Gomera</h3>
-          <ul data-role="listview" data-inset="true">
-            	<li><a href="#page10" onClick="listacentros('27')">Agulo</a></li>
-                <li><a href="#page10" onClick="listacentros('33')">Alajeró</a></li>
-                <li><a href="#page10" onClick="listacentros('218')">Hermigua</a></li>
-                <li><a href="#page10" onClick="listacentros('368')">San Sebastian de la Gomera</a></li>
-                <li><a href="#page10" onClick="listacentros('491')">Valle Gran Rey</a></li>
-                <li><a href="#page10" onClick="listacentros('504')">Vallehermoso</a></li>
-                
-          </ul>
-          </div><!-- /collapsible -->
-          <div data-role="collapsible" data-inset="true">
-         	<h3>El Hierro</h3>
-            <ul data-role="listview" data-inset="true">
-            	<li><a href="#page10" onClick="listacentros('131')">Frontera</a></li>
-                <li><a href="#page10" onClick="listacentros('9013')">El Pinar de El Hierro</a></li>
-
-                <li><a href="#page10" onClick="listacentros('488')">Valverde</a></li>
-                
-                
-          </ul> 
-          </div><!-- /collapsible -->
-          <div data-role="collapsible" data-inset="true">
-          <h3>La Palma</h3>
-          <ul data-role="listview" data-inset="true">
-            	<li><a href="#page10" onClick="listacentros('70')">Barlovento</a></li>
-                <li><a href="#page10" onClick="listacentros('86')">Breña Alta</a></li>
-                <li><a href="#page10" onClick="listacentros('99')">Breña Baja</a></li>
-                <li><a href="#page10" onClick="listacentros('146')">Fuencaliente</a></li>
-                <li><a href="#page10" onClick="listacentros('162')">Garafía</a></li>
-                <li><a href="#page10" onClick="listacentros('244')">Los Llanos de Aridane</a></li>
-                <li><a href="#page10" onClick="listacentros('276')">El Paso</a></li>
-                <li><a href="#page10" onClick="listacentros('295')">Puntagorda</a></li>
-                <li><a href="#page10" onClick="listacentros('309')">Puntallana</a></li>
-                <li><a href="#page10" onClick="listacentros('337')">San Andrés y Sauce</a></li>
-                <li><a href="#page10" onClick="listacentros('374')">Santa Cruz de la Palma</a></li>
-                <li><a href="#page10" onClick="listacentros('453')">Tazacorte</a></li>
-                <li><a href="#page10" onClick="listacentros('472')">Tijarafe</a></li>
-                <li><a href="#page10" onClick="listacentros('532')">Villa de Mazo</a></li>
-          </ul>
-          </div><!-- /collapsible -->
-          <div data-role="collapsible" data-inset="true">
-          <h3>Gran Canaria</h3>
-          <ul data-role="listview" data-inset="true">
-            	<li><a href="#page10" onClick="listacentros('17')">Agaete</a></li>
-                <li><a href="#page10" onClick="listacentros('22')">Agüimes</a></li>
-                <li><a href="#page10" onClick="listacentros('206')">Aldea de San Nicolás</a></li>
-                <li><a href="#page10" onClick="listacentros('56')">Artenara</a></li>
-                <li><a href="#page10" onClick="listacentros('69')">Arucas</a></li>
-                <li><a href="#page10" onClick="listacentros('81')">Firgas</a></li>
-                <li><a href="#page10" onClick="listacentros('94')">Gáldar</a></li>
-                <li><a href="#page10" onClick="listacentros('115')">Ingenio</a></li>
-               	<li><a href="#page10" onClick="listacentros('167')">Las Palmas</a></li>
-                <li><a href="#page10" onClick="listacentros('120')">Mogán</a></li>
-                <li><a href="#page10" onClick="listacentros('136')">Moya</a></li>
-                <li><a href="#page10" onClick="listacentros('192')">San Bartolomé de Tirajana</a></li>
-                <li><a href="#page10" onClick="listacentros('213')">Santa Brígida</a></li>
-                <li><a href="#page10" onClick="listacentros('228')">Santa Lucía de Tirajana</a></li>
-                <li><a href="#page10" onClick="listacentros('234')">Santa María de Guía</a></li>
-                <li><a href="#page10" onClick="listacentros('252')">Tejeda</a></li>
-                <li><a href="#page10" onClick="listacentros('265')">Telde</a></li>
-                <li><a href="#page10" onClick="listacentros('271')">Teror</a></li>
-                <li><a href="#page10" onClick="listacentros('326')">Valleseco</a></li>
-                <li><a href="#page10" onClick="listacentros('311')">Valsequillo</a></li>
-                <li><a href="#page10" onClick="listacentros('332')">Vega de San Mateo</a></li>
-        </ul>
-        </div><!-- /collapsible -->
-        <div data-role="collapsible" data-inset="true">
-        <h3>Fuerteventura</h3>
-        <ul data-role="listview" data-inset="true">
-            	<li><a href="#page10" onClick="listacentros('38')">Antigua</a></li>
-                <li><a href="#page10" onClick="listacentros('75')">Bentacuria</a></li>
-                <li><a href="#page10" onClick="listacentros('141')">La Oliva</a></li>
-                <li><a href="#page10" onClick="listacentros('154')">Pájara</a></li>
-                <li><a href="#page10" onClick="listacentros('173')">Puerto del Rosario</a></li>
-                <li><a href="#page10" onClick="listacentros('304')">Tuineje</a></li>
-         </ul>  
-         </div><!-- /collapsible -->
-         <div data-role="collapsible" data-inset="true">
-         <h3>Lanzarote</h3>
-         <ul data-role="listview" data-inset="true">
-            	<li><a href="#page10" onClick="listacentros('43')">Arrecife</a></li>
-                <li><a href="#page10" onClick="listacentros('108')">Haría</a></li>
-                <li><a href="#page10" onClick="listacentros('189')">San Bartolomé</a></li>
-                <li><a href="#page10" onClick="listacentros('249')">Teguise</a></li>
-                <li><a href="#page10" onClick="listacentros('287')">Tías</a></li>
-                <li><a href="#page10" onClick="listacentros('290')">Tinajo</a></li>
-                <li><a href="#page10" onClick="listacentros('347')">Yaiza</a></li>
-         </ul>  
-        
-         </ul> 
-          </div><!-- /collapsible -->
-	   
-	</div>
-    
- 
-</div>
-<!------FIN PAGINA 9------------------------------------------>
-<!------PAGINA 10----------------------------------------->
-<div data-role="page" id="page10" data-theme="a" >
-	 <div style="height:20px; visibility:hidden"> </div>
-	
-    <div data-role="header" data-theme="a" >  
-	  <a href="#page9" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
-      <h1>Centros Educativos</h1>
+    <div data-role="header" data-theme="a">  
+	  <a href="#page3" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
+      <h1>Comunidades Autónomas</h1>
 	</div> 
 	
-	 <div data-role="content" id="centros">
+	 <div data-role="content" id="comunidades" >
 			
 		   <!-- Aqui se añade el listado de centros -->
-		  <ul data-role="listview"  data-theme="c" id="listacentros"  data-inset="true" data-filter="true" data-filter-placeholder="Buscar por Nombre..." >
+		  <ul data-role="listview"  data-theme="c" id="listacomunidades"  data-inset="true" data-filter="true" data-filter-placeholder="Buscar por Nombre..." >
 		  	
             
 		  </ul>
@@ -871,7 +751,33 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
  
 </div>
 
-<!------FIN PAGINA 10------------------------------------------>
+<!------FIN PAGINA COMUNIDADES----------------------------------------->
+
+<!------PAGINA CENTROS--------------------------------------->
+<div data-role="page" id="centros" data-theme="a" >
+	 <div style="height:20px; visibility:hidden"></div>
+	
+    <div data-role="header" data-theme="a">  
+	  <a href="#comunidad" data-role="button" data-transition="slide" data-icon="carat-l" data-iconpos="notext" onClick="globo()" data-theme="a" >Atrás</a>
+      <h1>Centros Escolares</h1>
+	</div> 
+	
+	 <div data-role="content" id="comunidades" >
+			
+		   <!-- Aqui se añade el listado de centros -->
+		  <ul data-role="listview"  data-theme="c" id="listacentros2"  data-inset="true" data-filter="true" data-filter-placeholder="Buscar por Nombre..." >
+		  	
+            
+		  </ul>
+	   
+	</div>
+    
+ 
+</div>
+
+<!------FIN PAGINA Centros---------------------------------------->
+
+
 <!---------------------------- PAGINA 11 -------------------------------->
 <div data-role="page" id="page11" data-theme="a" >
 	<div style="height:20px; visibility:hidden"></div>
@@ -993,6 +899,8 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
                 <li><a href="#" onClick="ponercurso('5 PRIM', '5º Primaria')">5º Primaria</a></li>
                 <li><a href="#" onClick="ponercurso('6 PRIM', '6º Primaria')">6º Primaria</a></li>
                 <li><a href="#" onClick="ponercurso('ENCL', 'Aula Enclave')">Aula Enclave</a></li>
+                <li><a href="#" onClick="ponercurso('EEI', 'Aula Enclave')">Educación Especial Infantil</a></li>
+                <li><a href="#" onClick="ponercurso('EEP', 'Aula Enclave')">Educación Especial Primaria Transito Vida Adulta</a></li>
           </ul>
           </div>
           <div data-role="collapsible" data-inset="true">
