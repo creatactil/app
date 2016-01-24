@@ -61,6 +61,7 @@
 <script src="js/borrafavorito.js"></script>
 <script src="js/buscarAlumno.js"></script>
 <script src="js/desplazar.js"></script>
+<script src="js/desconectar.js"></script>
 <script src="js/mostrarDatos.js"></script>
 <script src="js/validarDni2.js"></script>
 <script src="js/registrarFamiliar.js"></script>
@@ -132,7 +133,7 @@
 <!-----------PAGINA 0---------------------------------------------------------------------->
 <div data-role="page" data-theme="a" id="pagina0">
 <div style="height:20px; visibility:hidden"> </div>
-  <div data-role="header">
+  <div data-role="header" data-theme="a">
     <h1>miColegioApp</h1>
   </div>
 	
@@ -176,6 +177,7 @@
     <li data-icon="star"><a onClick="listafavorito()">Favorito</a></li>
     <li data-icon="navigation"><a href="#" onClick="listaweb()">Web</a></li>
     <li data-icon="info"><a href="#page5" data-transition="slide">Ayuda</a></li>
+    <li data-icon="user"><a href="" onClick="window.open('whatsapp://send?text=Descarga la app para ANDROID en https://play.google.com/store/apps/details?id=com.creatactil.colegioapp para IOS en https://itunes.apple.com/us/app/micolegioapp/id919093088?l=es&ls=1&mt=8', '_system');">Comparte tu APP</a></li>
     <li data-icon="delete"><a href="#pageone" data-rel="close" data->Cerrar menú</a></li>
 </ul>
 <br>
@@ -191,7 +193,8 @@
     <div data-role="header" data-theme="a">
 		<a href="#overlayPanel" data-role="button" data-icon="bars" data-iconpos="notext"></a>
         <h1 style="width:42%; ">miColegioApp</h1>
-        
+        <a href="" data-role="button" class="ui-btn-right" data-mini="true" data-icon="power" onClick="desconectar()" data-iconpos="notext"></a>
+    
     </div >
     
     <div data-role="main" class="ui-content" style="margin:0; padding:0; position:fixed; width:100%">

@@ -78,6 +78,7 @@ function registrarAlumno() {
     		alert(data);
 			$("#lnkDialog").click();
 			//$.mobile.changePage("#page12");
+			portada()
             }
 		
 		

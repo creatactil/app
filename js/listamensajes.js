@@ -125,7 +125,7 @@ function crearLista() {
 		  	$('#lista').listview('refresh', true);
 			$('#lista1').listview('refresh', true);
 			globo();
-			
+						
     } 
 	 
 
