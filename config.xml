@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.creatactil.colegioapp"
-		versionCode="230"
-		version = "2.3.0">
+		versionCode="231"
+		version = "2.3.1">
 		<name>miColegioApp</name>
 		<description>
 Circulares Escolares		</description>
@@ -12,13 +12,16 @@ Gines
 		</author>
 		
 		<gap:config-file platform="ios" parent="CFBundleShortVersionString">
-		<string>230</string>
+		<string>231</string>
 		</gap:config-file>
 
 		
-		<preference name="phonegap-version" value="3.7.0" />
+		<preference name="permissions"                value="none"/>
+
+		
+		<preference name="phonegap-version" value="cli-5.4.1" />
 		<preference name="orientation" value="portrait" />
-		<preference name="fullscreen" value="true" />
+		<preference name="fullscreen" value="false" />
 		<preference name="target-device" value="universal" />
 		<preference name="webviewbounce" value="true" />
 		<preference name="prerendered-icon" value="true" />
@@ -50,41 +53,36 @@ Gines
 		
 		<gap:platform name="ios" />
 		
+		<plugin name="com.phonegap.plugins.pushplugin" source="pgb" spec="2.5.0" />
+		<plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="pgb" spec="1.2.0" />
+		<plugin name="org.apache.cordova.battery-status" source="pgb" spec="0.2.11" />
+		<plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.2" />
+		<plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
+		<plugin name="org.apache.cordova.contacts" source="pgb" spec="0.2.13" />
+		<plugin name="org.apache.cordova.device" source="pgb" spec="0.2.12" />
+		<plugin name="org.apache.cordova.device-motion" source="pgb" spec="0.2.10" />
+		<plugin name="org.apache.cordova.device-orientation" source="pgb" spec="0.3.9" />
+		<plugin name="org.apache.cordova.dialogs" source="pgb" spec="0.2.10" />
+		<plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
+		<plugin name="org.apache.cordova.file-transfer" source="pgb" spec="0.4.6" />
+		<plugin name="org.apache.cordova.geolocation" source="pgb" spec="0.3.10" />
+		<plugin name="org.apache.cordova.globalization" source="pgb" spec="0.3.1" />
+		<plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.5.2" />
+		<plugin name="org.apache.cordova.media" source="pgb" spec="0.2.13" />
+		<plugin name="org.apache.cordova.media-capture" source="pgb" spec="0.3.3" />
+		<plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.12" />
+		<plugin name="org.apache.cordova.splashscreen" source="pgb" spec="0.3.4" />
+		<plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.11" />
+		
 		<feature name="http://api.phonegap.com/1.0/file"/>
 		<feature name="http://api.phonegap.com/1.0/media"/>
 		<feature name="http://api.phonegap.com/1.0/network"/>
 		<feature name="http://api.phonegap.com/1.0/notification"/>
 		<feature name="http://api.phonegap.com/1.0/device"/>
 		
-		
-		<plugin name="com.phonegap.plugins.pushplugin" source="pgb" spec="2.5.0" />
-		<plugin name="org.apache.cordova.battery-status" source="pgb" spec="0.2.12" />
-		<plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.6" />
-		<plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
-		<plugin name="org.apache.cordova.contacts" source="pgb" spec="0.2.16" />
-		<plugin name="org.apache.cordova.device" source="pgb" spec="0.3.0" />
-		<plugin name="org.apache.cordova.device-motion" source="pgb" spec="0.2.11" />
-		<plugin name="org.apache.cordova.device-orientation" source="pgb" spec="0.3.11" />
-		<plugin name="org.apache.cordova.dialogs" source="pgb" spec="0.3.0" />
-		<plugin name="org.apache.cordova.file" source="pgb" spec="1.3.3" />
-		<plugin name="org.apache.cordova.file-transfer" source="pgb" spec="0.5.0" />
-		<plugin name="org.apache.cordova.geolocation" source="pgb" spec="0.3.12" />
-		<plugin name="org.apache.cordova.globalization" source="pgb" spec="0.3.4" />
-		<plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.6.0" />
-		<plugin name="org.apache.cordova.media" source="pgb" spec="0.2.16" />
-		<plugin name="org.apache.cordova.media-capture" source="pgb" spec="0.3.6" />
-		<plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.15" />
-		<plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
-		<plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
-		
-		
-		<!--
-		<plugin name="File" value="CDVFile" />
-		<plugin name="FileTransfer" value="CDVFileTransfer" />
-		<plugin name="InAppBrowser" value="CDVInAppBrowser" />
-		<plugin name="Media" value="CDVSound" />
-		<plugin name="Notification" value="CDVNotification" />
-		<plugin name="SplashScreen" value="CDVSplashScreen" />-->
+		<feature name="PushPlugin">
+  		<param name="android-package" value="com.plugin.gcm.PushPlugin" />
+		</feature>
 		
 		
 		<icon src="imagenes/57.png" gap:platform="ios" width="57" height="57" />
