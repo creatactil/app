@@ -6,6 +6,8 @@ function loginVal2(){
 		
 		var xusuario = $("#usuario").val();
 		var xpa2 = $("#pa2").val().toUpperCase();	
+		var xregid = $("#regId").val();
+		
 		
 		if(document.form2.usuario.value.length == ""){
 			alert("Introduzca su correo electrónico"); 
@@ -53,6 +55,8 @@ function loginVal2(){
 				localStorage.parentesco = xparentescofam;
 				localStorage.codigo = item.codigo;
 				localStorage.pass = xpass;
+				localStorage.gcm = xregid;
+				
 				//location.href="#pagina1";
 				$.mobile.changePage("#page1");
 				
@@ -71,7 +75,11 @@ function comprobarid(){
 	
 	var xregid = $("#regId").val();
 	var xdni = localStorage.dni;
+	var xgcm = localStorage.gcm;
 	
+	if(xregid != xgcm){
+	
+	localStorage.gcm = xregid;
 	
 	$.ajax({
 		url: 'http://mc.creatactil.com/comprobarid.php',
@@ -82,6 +90,6 @@ function comprobarid(){
 		data: {regid: xregid, dni: xdni},
 		
 			});
-	
+	}
 	
 	}

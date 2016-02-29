@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.creatactil.colegioapp"
-		versionCode="231"
-		version = "2.3.1">
+		versionCode="232"
+		version = "2.3.2">
 		<name>miColegioApp</name>
 		<description>
 Circulares Escolares		</description>
@@ -12,7 +12,7 @@ Gines
 		</author>
 		
 		<gap:config-file platform="ios" parent="CFBundleShortVersionString">
-		<string>231</string>
+		<string>232</string>
 		</gap:config-file>
 
 		

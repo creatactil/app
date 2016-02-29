@@ -3,9 +3,6 @@ function init(){
 	var xdni = localStorage.dni;
 	//alert(xdni);
 	
-	
-	
-	
 	if ((typeof xdni == 'undefined') || (xdni == "")){
 		
 		$.mobile.changePage("#page0", {transition: "slide"},
@@ -21,6 +18,8 @@ function init(){
             true,
             true);
 			
+			
+			comprobarid();
 			sumavisita();
 			globo();
 			onLoad();
