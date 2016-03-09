@@ -19,7 +19,6 @@ function init(){
             true);
 			
 			
-			comprobarid();
 			sumavisita();
 			globo();
 			onLoad();
