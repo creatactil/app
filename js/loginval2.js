@@ -61,7 +61,7 @@ function loginVal2(){
 				$.mobile.changePage("#page1");
 				
 				comprobarid();
-				init();
+				
 				
 			});
 			
