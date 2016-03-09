@@ -60,7 +60,7 @@ function loginVal2(){
 				//location.href="#pagina1";
 				$.mobile.changePage("#page1");
 				
-				comprobarid();
+				
 				
 				
 			});
@@ -70,6 +70,7 @@ function loginVal2(){
 
 });
 
+comprobarid();
 }
 
 function comprobarid(){
