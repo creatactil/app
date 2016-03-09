@@ -18,7 +18,7 @@ function init(){
             true,
             true);
 			
-			
+			comprobarid();
 			sumavisita();
 			globo();
 			onLoad();
