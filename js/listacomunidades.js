@@ -33,8 +33,8 @@ function listacomunidades() {
 	
 
 			
-			 $('body').append(content).trigger('refresh');
-			$(index).page();
+			 //$('body').append(content).trigger('refresh');
+			//$(index).page();
 		});
 			 
 		}
