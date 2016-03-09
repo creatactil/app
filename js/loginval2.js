@@ -76,13 +76,9 @@ function comprobarid(){
 	
 	var xregid = $("#regId").val();
 	var xdni = localStorage.dni;
-	var xgcm = localStorage.gcm;
 	
-	if(xregid != xgcm){
-		alert("Dentro comprobar id");
-	
-	localStorage.gcm = xregid;
-	
+		alert("Dentro comprobar");
+		
 	$.ajax({
 		url: 'http://mc.creatactil.com/comprobarid.php',
 		dataType: 'jsonp',
@@ -92,6 +88,6 @@ function comprobarid(){
 		data: {regid: xregid, dni: xdni},
 		
 			});
-	}
+	
 	
 	}
