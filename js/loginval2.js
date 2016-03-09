@@ -60,10 +60,11 @@ function loginVal2(){
 				//location.href="#pagina1";
 				$.mobile.changePage("#page1");
 				
+				comprobarid();
+				init();
 				
 			});
-			init();
-			comprobarid();
+			
 			}
 		},
 
@@ -78,6 +79,7 @@ function comprobarid(){
 	var xgcm = localStorage.gcm;
 	
 	if(xregid != xgcm){
+		alert("Dentro comprobar id");
 	
 	localStorage.gcm = xregid;
 	
