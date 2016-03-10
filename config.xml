@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.creatactil.colegioapp"
-		versionCode="233"
-		version = "2.3.3">
+		versionCode="234"
+		version = "2.3.4">
 		<name>miColegioApp</name>
 		<description>
 Circulares Escolares		</description>
@@ -12,7 +12,7 @@ Gines
 		</author>
 		
 		<gap:config-file platform="ios" parent="CFBundleShortVersionString">
-		<string>233</string>
+		<string>234</string>
 		</gap:config-file>
 
 		
@@ -55,17 +55,13 @@ Gines
 		
 		<plugin name="com.phonegap.plugins.pushplugin" source="pgb" spec="2.5.0" />
 		<plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="pgb" spec="1.2.0" />
-		<plugin name="org.apache.cordova.battery-status" source="pgb" spec="0.2.11" />
-		<plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.2" />
 		<plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
-		<plugin name="org.apache.cordova.contacts" source="pgb" spec="0.2.13" />
 		<plugin name="org.apache.cordova.device" source="pgb" spec="0.2.12" />
 		<plugin name="org.apache.cordova.device-motion" source="pgb" spec="0.2.10" />
 		<plugin name="org.apache.cordova.device-orientation" source="pgb" spec="0.3.9" />
 		<plugin name="org.apache.cordova.dialogs" source="pgb" spec="0.2.10" />
 		<plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
 		<plugin name="org.apache.cordova.file-transfer" source="pgb" spec="0.4.6" />
-		<plugin name="org.apache.cordova.geolocation" source="pgb" spec="0.3.10" />
 		<plugin name="org.apache.cordova.globalization" source="pgb" spec="0.3.1" />
 		<plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.5.2" />
 		<plugin name="org.apache.cordova.media" source="pgb" spec="0.2.13" />
@@ -92,13 +88,7 @@ Gines
 		<icon src="imagenes/76.png" gap:platform="ios" width="76" height="76" />
 		<icon src="imagenes/120.png" gap:platform="ios" width="120" height="120" />
 		<icon src="imagenes/152.png" gap:platform="ios" width="152" height="152" />
-		<icon src="imagenes/36.png" gap:platform="android" gap:density="ldpi" />
-		<icon src="imagenes/48.png" gap:platform="android" gap:density="mdpi" />
-		<icon src="imagenes/72.png" gap:platform="android" gap:density="hdpi" />
-		<icon src="imagenes/96.png" gap:platform="android" gap:density="xhdpi" />
-		<icon src="imagenes/144.png" gap:platform="android" gap:density="xxhdpi" />
-		<icon src="imagenes/72.png" gap:platform="winphone" />
-		<icon src="imagenes/144.png" gap:platform="winphone" gap:role="background" />
+		<icon src="icon.png"/>
 		
 		<gap:splash src="splash/iphone3_4_4S.png" gap:platform="ios" width="320" height="480" />
 		<gap:splash src="splash/iphone3_4_4S(horizontal).png" gap:platform="ios" width="480" height="320" />

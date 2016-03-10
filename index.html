@@ -244,7 +244,7 @@
         
        	<select name="parentesco" id="parentesco" data-native-menu="false" style="margin-left:1em; margin-right:1em">
                
-          <option value="MADRE" selected>Madre<option>
+          <option value="MADRE" selected>Madre</option>
           <option value="PADRE">Padre</option>
           <option value="TUTOR">Tutor Legal</option>
           <option value="PERSONA AUTORIZADA">Persona Autorizada</option>
@@ -290,7 +290,7 @@
     		 <div class="ui-block-b">
     <a id="mod_datos" class="btn_modificar" data-role="button" name="link" href="" data-icon="plus" onClick="validarDni2()" style="margin-right:1em; margin-left:5%">Modificar</a>
     	 	</div>
-            
+            </fieldset>
   
     <br>
     <br>
@@ -331,7 +331,7 @@
           </div>  
        
      <fieldset class="ui-grid-a" data-type="horizontal">   
-               <div class="ui-block-a"><a  href="#page8" data-rel="dialog" data-role="button" data-icon="info" style="text-align:left"">¿Cial...?</a></div> 
+               <div class="ui-block-a"><a  href="#page8" data-rel="dialog" data-role="button" data-icon="info" style="text-align:left">¿Cial...?</a></div> 
                           
         <div class="ui-block-b"><a href="#" data-role="button"  data-icon="search" onClick="buscarAlumno()" style="text-align:left">Modificar</a></div>
         
@@ -425,11 +425,11 @@
    </div>
      <a href="#" onClick="registrarAlumno()" data-icon="check" data-iconpos="left" data-role="button" data-rel="dialog" style="margin-left:1.2em; margin-right:1.2em">Guardar</a>
     
-      <a id='lnkDialog' href="#page12" data-rel="dialog" data-transition="pop" style='display:none;'></a> 
+      <a id="lnkDialog" href="#page12" data-rel="dialog" data-transition="pop" style="display:none;"></a> 
  <!-- Pie de pagina 3 -->
 
 </div>
-</div>
+
 
 <!----------------------------PAGINA 3b-------------------------------->
 <div data-role="page" id="page3b" data-theme="a">
@@ -456,7 +456,7 @@
         <input id="apellidos_profe" name="apellidos_profe" type="text" placeholder="Apellidos del maestro/profesor">
         
         <label>Teléfono móvil:</label>
-        <input id="telefono_profe" name="telefono_profe" type="number" maxlength="9" id="telefono" placeholder="Teléfono">
+        <input id="telefono_profe" name="telefono_profe" type="number" maxlength="9"  placeholder="Teléfono">
         
         <input id="dni_profe" name="dni_profe"  type="hidden">  
           
@@ -479,7 +479,7 @@
    <!-- Botones de registro -->
      
    </div>
-     <a href="#page7b" data-role="button" data-transition="slide" data-icon="check" id="enviadatos" style="margin-left:1em; margin-right:5%">Guardar</a>
+     <a href="#page7b" data-role="button" data-transition="slide" data-icon="check" style="margin-left:1em; margin-right:5%">Guardar</a>
  		<br>
     <br>
     <br>
@@ -494,11 +494,11 @@
     <br>
     <br>
     <br>		
-      <a id='lnkDialog' href="#page12" data-rel="dialog" data-transition="pop" style='display:none;'></a> 
+      <!--<a id="lnkDialog" href="#page12" data-rel="dialog" data-transition="pop" style="display:none;"></a>--> 
  <!-- Pie de pagina 3 -->
 
 </div>
-</div>
+
 
 
 
@@ -594,7 +594,7 @@
     <div data-role="navbar" >
     <ul>
     <li><a href="#page1" data-role="button" data-transition="slide" onClick="globo()" data-icon="home">Inicio</a></li>
-    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img src="" class="globo" style="float:left; width:15px;">Circulares</a></li>
+    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img class="globo" style="float:left; width:15px;">Circulares</a></li>
     <li><a href="#" data-role="button" onClick="listafavorito()" data-icon="star">Favoritos</a></li>
     <li><a href="#" data-role="button" onClick="listaweb()" data-icon="navigation">Web</a></li>
     </ul>
@@ -627,7 +627,7 @@
     <div data-role="navbar" >
     <ul>
     <li><a href="#page1" data-role="button" data-transition="slide" onClick="globo()" data-icon="home">Inicio</a></li>
-    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img src="" class="globo" style="float:left; width:15px;">Circulares</a></li>
+    <li><a href="#" data-role="button" onClick="crearLista()" data-icon="mail"><img class="globo" style="float:left; width:15px;">Circulares</a></li>
     <li><a href="#" data-role="button" onClick="listafavorito()" data-icon="star">Favoritos</a></li>
     <li><a href="#" data-role="button" onClick="listaweb()" data-icon="navigation">Web</a></li>
     </ul>
@@ -805,7 +805,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
             
             <br>
             <span id="codigofirma" hidden="true"></span>
-	   </p>
+	   
 		
 		 
 	   	    
@@ -949,7 +949,7 @@ Asimismo, CREATÁCTIL S.L se compromete a adoptar en todo momento los niveles de
                 
           </ul>
          </div>
-	   </ul>
+	   
        
 	</div>
     

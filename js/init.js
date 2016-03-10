@@ -18,11 +18,12 @@ function init(){
             true,
             true);
 			
-			comprobarid();
+			
 			sumavisita();
 			globo();
 			onLoad();
 			portada();
+			setTimeout('comprobarid()',8000);
 		}
 	
 	
