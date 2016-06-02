@@ -70,7 +70,7 @@ function loginVal2(){
 
 });
 
-setTimeout('comprobarid()',8000);
+comprobarid();
 }
 
 function comprobarid(){
@@ -78,7 +78,7 @@ function comprobarid(){
 	var xregid = $("#regId").val();
 	var xdni = localStorage.dni;
 	
-	if(xregid != ""){	
+	if((xregid != "") && (xdni != "")){	
 		
 	$.ajax({
 		url: 'http://mc.creatactil.com/comprobarid.php',

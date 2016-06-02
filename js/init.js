@@ -23,7 +23,7 @@ function init(){
 			globo();
 			onLoad();
 			portada();
-			setTimeout('comprobarid()',8000);
+			comprobarid();
 		}
 	
 	
